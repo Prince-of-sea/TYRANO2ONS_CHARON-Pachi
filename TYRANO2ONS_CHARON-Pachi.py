@@ -229,11 +229,9 @@ reset
 #--------------------def--------------------
 #ffmpeg存在チェック
 def start_check():
-	try: sp.run(['ffmpeg'], text=True, shell=True)
-	except: ffmpeg_exist = False
-	else: ffmpeg_exist = True
-
-	return ffmpeg_exist
+	try: sp.run(['ffmpeg'])
+	except: return False
+	else: return True
 
 
 # effect生成時に使う関数
